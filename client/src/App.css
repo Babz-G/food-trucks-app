@@ -76,3 +76,16 @@ form button {
   font-size: 1rem;
   cursor: pointer;
 }
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: left;
+  border: 1.4px solid black;
+}
