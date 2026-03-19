@@ -43,10 +43,15 @@ async function getFoodTruckById(id) {
 }
 
 // ✅ 3. getVeganFoodTrucks()
+
+// Gets all food trucks with vegan options from the database
 async function getVeganFoodTrucks() {
+  // Searches the database for trucks where has_vegan_options is true
   const result = await db.query(
+    // Selects id, name, and has_vegan_options columns from the food_trucks table
     "SELECT id, name, has_vegan_options FROM food_trucks WHERE has_vegan_options = true"
   );
+  // Returns just the rows from the results.
   return result.rows;
 }
 
@@ -177,8 +182,12 @@ app.get("/get-food-truck-by-id/:id", async (req, res) => {
 });
 
 // ✅ 3. GET /get-vegan-food-trucks
+
+// Listens for GET requests at /get-vegan-food-trucks
 app.get("/get-vegan-food-trucks", async (req, res) => {
+  // Calls the function above to fetch the trucks from the database
   const trucks = await getVeganFoodTrucks();
+  // Sends the trucks array back to the client as JSON
   res.json(trucks);
 });
 
