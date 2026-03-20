@@ -29,8 +29,14 @@ function Home() {
             <p>
               Has Vegan Options: {truck.has_vegan_options ? "Yes ✅" : "No ❌"}
             </p>
-            <p>Price Level: {truck.price_level}</p>
-            <p>Rating: {truck.rating}</p>
+            {/* <p>Price Level: {truck.price_level}</p> */}
+            <p>Price Level: {"💰".repeat(truck.price_level)}</p>
+            {/* Repeats the 💰 emoji based on the price level number. */}
+            {/* <p>Rating: {truck.rating}</p> */}
+            <p>
+              Rating: {"⭐️".repeat(Math.floor(truck.rating))} ({truck.rating})
+              {/* Repeats the ⭐️ emoji (Rounds down to whole number - whomp whomp.) */}
+            </p>
           </div>
         ))}
       </div>
