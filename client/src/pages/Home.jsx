@@ -21,7 +21,15 @@ function Home() {
       <div className="card-container">
         {trucks.map((truck) => (
           <div className="card" key={truck.id}>
-            <h2>{truck.name}</h2>
+            <h2>
+              {truck.name}{" "}
+              {truck.rating >= 4.5 ? (
+                <span className="top-rated-text">Top Rated</span>
+              ) : (
+                ""
+              )}
+            </h2>
+
             <p>Id: {truck.id}</p>
             <p>Location: {truck.current_location}</p>
             <p>Daily Special: {truck.daily_special}</p>
