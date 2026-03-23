@@ -3,6 +3,7 @@ import "../App.css";
 
 function Home() {
   const [trucks, setTrucks] = useState([]);
+  const [searchBar, setSearchBar] = useState("");
 
   useEffect(() => {
     async function fetchTrucks() {
@@ -13,6 +14,10 @@ function Home() {
     fetchTrucks();
   }, []);
 
+  const findTruck = trucks.filter((truck) =>
+    truck.name.toLowerCase().includes(searchBar.toLowerCase())
+  ); //search bar
+
   return (
     <>
       <h1>All Food Trucks</h1>
@@ -20,8 +25,16 @@ function Home() {
         Total number of food trucks: {trucks.length}
       </h2>
 
+      <input
+        className="search-bar"
+        type="text"
+        placeholder="🔍 Search for a food truck here"
+        value={searchBar}
+        onChange={(e) => setSearchBar(e.target.value)}
+      />
+
       <div className="card-container">
-        {trucks.map((truck) => (
+        {findTruck.map((truck) => (
           <div className="card" key={truck.id}>
             <h2>
               {truck.name}{" "}

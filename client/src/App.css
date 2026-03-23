@@ -66,10 +66,9 @@ nav a:hover {
   letter-spacing: 1px;
 }
 
-/* ✨ Typography ✨ */
-
 h1 {
-  margin: 3rem 0;
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: 3rem;
 }
 h2 {
   margin-bottom: 2rem;
@@ -79,12 +78,14 @@ h2 {
 
 .truck-counter {
   display: inline-block;
-  background-color: var(--maroon);
-  /* color: var(--ghostWhite); */
-  padding: 8px 20px;
+  background-color: white;
+  color: var(--maroon);
+  padding: 6px 16px;
   border-radius: 20px;
   font-weight: bold;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* ✨ Cards ✨ */
@@ -178,4 +179,18 @@ form button {
 form button:hover {
   transform: translateY(-3px);
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ✨ Search  Bar ✨ */
+
+.search-bar {
+  display: block;
+  margin: 0.5rem auto 1.5rem auto;
+  width: 40%;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  border: 1.4px solid black;
+  font-size: 1rem;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+  outline: none;
 }
