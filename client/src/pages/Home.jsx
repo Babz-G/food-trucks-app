@@ -16,7 +16,9 @@ function Home() {
   return (
     <>
       <h1>All Food Trucks</h1>
-      <h2>Total number of food trucks: {trucks.length}</h2>
+      <h2 className="truck-counter">
+        Total number of food trucks: {trucks.length}
+      </h2>
 
       <div className="card-container">
         {trucks.map((truck) => (
@@ -30,19 +32,35 @@ function Home() {
               )}
             </h2>
 
-            <p>Id: {truck.id}</p>
-            <p>Location: {truck.current_location}</p>
-            <p>Daily Special: {truck.daily_special}</p>
-            <p>Slogan: {truck.slogan}</p>
             <p>
-              Has Vegan Options: {truck.has_vegan_options ? "Yes ✅" : "No ❌"}
+              <strong>Id: </strong>
+              {truck.id}
+            </p>
+            <p>
+              <strong>Location: </strong>
+              {truck.current_location}
+            </p>
+            <p>
+              <strong>Daily Special:</strong> {truck.daily_special}
+            </p>
+            <p>
+              <strong>Slogan: </strong>
+              {truck.slogan}
+            </p>
+            <p>
+              <strong>Has Vegan Options:</strong>{" "}
+              {truck.has_vegan_options ? "Yes ✅" : "No ❌"}
             </p>
             {/* <p>Price Level: {truck.price_level}</p> */}
-            <p>Price Level: {"💰".repeat(truck.price_level)}</p>
+            <p>
+              <strong>Price Level: </strong>
+              {"💰".repeat(truck.price_level)}
+            </p>
             {/* Repeats the 💰 emoji based on the price level number. */}
             {/* <p>Rating: {truck.rating}</p> */}
             <p>
-              Rating: {"⭐️".repeat(Math.floor(truck.rating))} ({truck.rating})
+              <strong>Rating: </strong>
+              {"⭐️".repeat(Math.floor(truck.rating))} ({truck.rating})
               {/* Repeats the ⭐️ emoji (Rounds down to whole number - whomp whomp.) */}
             </p>
           </div>
